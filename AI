@@ -1,0 +1,14 @@
+Write a code draw a Mandelbrot set fractal using Python. 
+The program should:
+
+- Ask the user to input their first name and use that to generate a unique seed for a color palette.
+
+- Ask the user for a zoom level (e.g., 1 to 100) and adjust the view of the Mandelbrot accordingly.
+
+- Use NumPy for computation and Matplotlib for visualization.
+
+- Return only code, organized in three sections: (1) User Input and Parameter Setup, (2) Mandelbrot Set Computation, (3) Plotting and Saving the Image.
+
+- Add comments to the code explaining each major block of logic.
+
+- Make sure the code is runnable, and generates a unique image based on the user’s name and zoom.
