@@ -95,6 +95,9 @@ plt.show()
 
 
 3) The most helpful technique was “Specify the Desired Format and Output Structure”, as it allowed me to get clean, logically organized,
+   
    and easy-to-run code without extra explanation clutter. The technique that helped the least was “Ask for comparisons or alternatives,”
+
    since I only wanted a single approach in this case. Next time, I would experiment with more creative name-based input features,
+
    like generating fractal parameters (center coordinates or iterations) based on the hash too, not just color.
