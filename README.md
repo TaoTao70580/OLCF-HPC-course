@@ -25,37 +25,56 @@ import matplotlib.pyplot as plt
 import hashlib
 
 #Ask for user input
+
 name = input("Enter your first name: ")
+
 zoom_input = input("Enter zoom level (1-100): ")
 
 #Convert input to numeric values
+
 zoom = max(1, min(100, int(zoom_input)))  # clamp zoom to [1, 100]
 
 #Generate a deterministic color shift based on the user's name
+
 name_hash = int(hashlib.sha256(name.encode()).hexdigest(), 16)
+
 color_shift = name_hash % 256
 
 #Image dimensions and plot settings
+
 width, height = 800, 800
+
 max_iter = 256
 
 #Mandelbrot Set Computation ---
 #Set plot boundaries based on zoom
+
 scale = 1 / zoom
+
 x_min, x_max = -2.5 * scale, 1.5 * scale
+
 y_min, y_max = -2.0 * scale, 2.0 * scale
 
 #Create meshgrid of complex numbers
+
 x = np.linspace(x_min, x_max, width)
+
 y = np.linspace(y_min, y_max, height)
+
 X, Y = np.meshgrid(x, y)
+
 C = X + 1j * Y
+
 Z = np.zeros_like(C)
+
 mandelbrot = np.zeros(C.shape, dtype=int)
 
 for i in range(max_iter):
+
     mask = np.abs(Z) < 1000
+    
     Z[mask] = Z[mask] ** 2 + C[mask]
+    
     mandelbrot[mask & (np.abs(Z) >= 1000)] = i
 
 #Create a colormap that is shifted by the user's name
